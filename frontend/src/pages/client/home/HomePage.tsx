@@ -101,7 +101,7 @@ const HomePage: React.FC = () => {
             <div className="mt-[300px] sm:mt-[400px] lg:mt-[500px] mb-12 sm:mb-16 lg:mb-20 container mx-auto">
               <div className="text-center mb-8 sm:mb-12">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#034ea2] mb-4">
-                  MOVIE SECTION
+                  MOVIE SECTIONsssssssss
                 </h2>
               </div>
 
