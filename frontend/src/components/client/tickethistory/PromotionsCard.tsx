@@ -1,7 +1,7 @@
 import { Tag } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "../../../components/ui/card"
 import { Badge } from "../../../components/ui/badge"
-import type { Ticket } from "../types/ticket"
+import type { Ticket } from "../../../types/ticket"
 
 interface PromotionsCardProps {
     ticket: Ticket

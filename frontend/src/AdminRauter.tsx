@@ -1,6 +1,6 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { toast } from "sonner";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 const ADMIN_ROLE_ID = "6864af6bdd24a9f129d73d93";
 

@@ -1,6 +1,6 @@
 import { User } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "../../../components/ui/card"
-import type { Ticket } from "../types/ticket"
+import type { Ticket } from "../../../types/ticket"
 
 interface CustomerInfoCardProps {
     ticket: Ticket

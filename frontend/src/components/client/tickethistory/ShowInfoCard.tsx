@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../../../components/ui/card"
 import { Badge } from "../../../components/ui/badge"
-import type { Ticket } from "../types/ticket"
+import type { Ticket } from "../../../types/ticket"
 
 interface ShowInfoCardProps {
     ticket: Ticket

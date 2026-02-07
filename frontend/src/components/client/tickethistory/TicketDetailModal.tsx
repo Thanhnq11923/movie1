@@ -1,5 +1,5 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../../../components/ui/dialog"
-import type { Ticket } from "../types/ticket"
+import type { Ticket } from "../../../types/ticket"
 import { MovieInfoCard } from "./MovieInfoCard"
 import { ShowInfoCard } from "./ShowInfoCard"
 import { CustomerInfoCard } from "./CustomerInfoCard"
