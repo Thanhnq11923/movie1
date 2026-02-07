@@ -8,7 +8,7 @@ import type {
     UpdatePromotionRequest,
 } from "../../types/promotion";
 
-const apiUrl = "http://localhost:3000/api";
+const apiUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api";
 
 // Get auth token from localStorage
 const getAuthToken = (): string | null => {

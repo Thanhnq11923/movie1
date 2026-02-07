@@ -1,6 +1,6 @@
 import axios, { AxiosError } from "axios";
 
-const apiUrl = "http://localhost:3000/api";
+const apiUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api";
 
 // Create axios instance with default config
 const userApi = axios.create({

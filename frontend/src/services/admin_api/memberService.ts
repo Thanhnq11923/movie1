@@ -2,7 +2,7 @@
 import axios from "axios";
 import type { NewAccountInput, UpdateAccountInput } from "../../types/account";
 
-const BASE_URL = "http://localhost:3000/api/users";
+const BASE_URL = `${import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api"}/users`;
 
 interface ApiNewAccountInput {
   fullName: string;
