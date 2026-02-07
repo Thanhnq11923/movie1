@@ -14,13 +14,27 @@ connectDB();
 const app = express();
 app.use(express.json());
 
-// Middleware
+// Middleware - CORS configuration
+const allowedOrigins = process.env.CORS_ORIGINS
+  ? process.env.CORS_ORIGINS.split(",")
+  : ["http://localhost:5173"];
+
 app.use(
   cors({
-    origin: "http://localhost:5173", // Hoặc địa chỉ cụ thể của frontend, ví dụ: 'http://localhost:3000'
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
-  })
+    credentials: true,
+  }),
 );
 
 // Routes
@@ -74,6 +88,6 @@ app.use("/api/staff-bookings", require("./routes/staffBookingRoutes"));
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, '127.0.0.1', () => {
+app.listen(PORT, "127.0.0.1", () => {
   console.log(`Server is running on port ${PORT}`);
 });
