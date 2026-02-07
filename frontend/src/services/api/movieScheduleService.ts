@@ -1,6 +1,7 @@
-import axios from 'axios';import type { MovieSchedule, MovieScheduleResponse } from '../../types/schedule';
+import axios from 'axios';
+import type { MovieSchedule, MovieScheduleResponse } from '../../types/schedule';
 
-const apiUrl = "http://localhost:3000/api";
+const apiUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api";
 
 export const movieScheduleService = {
     getAllMovieSchedules: async (): Promise<MovieScheduleResponse> => {

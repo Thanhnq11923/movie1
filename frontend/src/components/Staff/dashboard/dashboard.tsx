@@ -23,8 +23,7 @@ import { cinemaService } from "../../../services/api/cinemaService";
 import { getAllMembers } from "../../../services/admin_api/memberService";
 import { getSeatsByScheduleId } from "../../../services/api/seatService";
 import { staffBookingService } from "../../../services/api/staffBookingService";
-
-const API_BASE_URL = 'http://localhost:3000/api';
+import { API_BASE_URL } from "../../../config/api";
 
 export default function EmployeeDashboardContent() {
   const navigate = useNavigate();

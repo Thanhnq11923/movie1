@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { authService } from './authService';
+import { API_BASE_URL } from '../../config/api';
 
 export interface Egift {
   _id: string;
@@ -29,7 +30,7 @@ export const egiftService = {
    */
   getAllEgifts: async (): Promise<Egift[]> => {
     try {
-      const response = await fetch('http://localhost:3000/api/egifts', {
+      const response = await fetch(`${API_BASE_URL}/egifts`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -60,7 +61,7 @@ export const egiftService = {
     try {
       const token = authService.getToken?.() || localStorage.getItem('token');
 
-      const response = await fetch(`http://localhost:3000/api/egifts/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/egifts/${id}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -96,7 +97,7 @@ export const egiftService = {
         throw new Error('Authentication required');
       }
 
-      const response = await fetch('http://localhost:3000/api/users/exchange-egift', {
+      const response = await fetch(`${API_BASE_URL}/users/exchange-egift`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

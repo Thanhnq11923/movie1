@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authService } from "../../../services/api/authService";
+import { createApiUrl } from "../../../utils/apiHelpers";
 
 export default function VerifyCode() {
   const [code, setCode] = useState(["", "", "", "", "", ""]);
@@ -100,7 +101,7 @@ export default function VerifyCode() {
     try {
       const otp = code.join('');
       // Gọi API verify-otp
-      const response = await fetch('http://localhost:3000/api/auth/verify-otp', {
+      const response = await fetch(createApiUrl('/auth/verify-otp'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, otp })
